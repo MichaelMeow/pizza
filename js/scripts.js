@@ -7,7 +7,6 @@ function Pizza(size, toppings){
 
 
 Pizza.prototype.orderString = function() {
-  console.log(this);
 var orderString = ""
 var toppings = this.toppings
 var size = this.size
@@ -29,12 +28,22 @@ if (size = "xl"){
 
 if (toppings.length !== 0 && toppings.length !== undefined){
   orderString += " with"
-  this.toppings.forEach(function(topping){
-    orderString += topping + ", "
-  })
-  orderString -= ", "
-  orderString += "."
+  for (i=0;i<toppings.length;i++){
+  if (toppings.length > 1 && i == (toppings.length - 1)){
+    orderString += " and"
+  }
+  console.log(toppings);
+    orderString += " " + toppings[i]
+    if (toppings.length > 2){
+      orderString += ","
+    }
+
 }
+    if (toppings.length > 2){
+orderString = orderString.slice(0, - 1);
+}
+}
+orderString += "."
 return orderString
 
 };
@@ -51,7 +60,6 @@ $(function() {
     });
 
     var pizza = new Pizza(size, toppings)
-    console.log(pizza);
     $("#output").append("<li>" + pizza.orderString() + "</li>")
   })
 

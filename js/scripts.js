@@ -69,7 +69,6 @@ Pizza.prototype.cost = function() {
   toppings.forEach(function(topping){
     price ++
   })
-  price = price.toString() + ".00"
   return price
 
 
@@ -77,7 +76,10 @@ Pizza.prototype.cost = function() {
 // User Interface
 
 $(function() {
+
+  var totalCost = 0
   $("form.order").submit(function(event){
+    var orders = []
     event.preventDefault();
     var toppings = []
     var size = $("input:radio[name=size]:checked").val();
@@ -85,12 +87,13 @@ $(function() {
       toppings.push($(this).val());
     });
     var pizza = new Pizza(size, toppings)
-    $("#output").append("<li>" + pizza.orderString() + "  Total Price: " + pizza.cost() + "</li>")
+    orders.push(pizza);
+    orders.forEach(function(order){
+      $("#output").append("<li>" + order.orderString() + "</li>")
+      totalCost += order.cost();
+    })
+    $("#total").html("  Total Price: $" + totalCost + ".00")
   })
-
-
-
-
 
 
 });

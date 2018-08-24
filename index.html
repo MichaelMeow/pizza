@@ -1,101 +1,121 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <meta charset="utf-8">
-    <title>Get My Pizza</title>
-  </head>
-  <body>
-    <div class="container">
-    <h1>Get My Pizza</h1>
-    <form class="order" action="index.html" method="post">
+<head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <meta charset="utf-8">
+  <title>Get My Pizza</title>
+</head>
+<body>
+  <div class="container">
+
     <div class="row">
-      <div class="col-sm">
-        <h3>Select your toppings:</h3>
-        <ul class="bulletless">
-        <li>
-          <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
-          <label for="pepperoni">Pepperoni</label>
-        </li>
-        <li>
-          <input type="checkbox" id="sausage" name="toppings" value="sausage">
-          <label for="sausage">Sausage</label>
-        </li>
-        <li>
-          <input type="checkbox" id="basil" name="toppings" value="basil">
-          <label for="basil">Basil</label>
-        </li>
-        <li>
-          <input type="checkbox" id="bell" name="toppings" value="bell pepper">
-          <label for="bell">Bell Pepper</label>
-        </li>
-        <li>
-          <input type="checkbox" id="onion" name="toppings" value="onion">
-          <label for="onion">Onion</label>
-        </li>
-        <li>
-          <input type="checkbox" id="olive" name="toppings" value="olive">
-          <label for="olive">Olive</label>
-        </li>
-        <li>
-          <input type="checkbox" id="tomato" name="toppings" value="tomato">
-          <label for="tomato">Tomato</label>
-        </li>
-        <li>
-          <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
-          <label for="pineapple">Pineapple</label>
-        </li>
-        <li>
-          <input type="checkbox" id="jalapeno" name="toppings" value="jalapeno">
-          <label for="jalapeno">Jalapeño</label>
-        </li>
-        <li>
-          <input type="checkbox" id="mushroom" name="toppings" value="mushroom">
-          <label for="mushroom">Mushroom</label>
-        </li>
-      </ul>
-      </div>
-      <div class="col-sm">
-        <h3>Select your size</h3>
-        <ul class="bulletless">
-          <li>
-            <input type="radio" id="xs"
-            name="size" value="xs">
-            <label for="xs">X-Small</label>
-          </li>
-          <li>
-            <input type="radio" id="s"
-            name="size" value="s">
-            <label for="s">Small</label>
-          </li>
-          <li>
-            <input type="radio" id="m"
-            name="size" value="m">
-            <label for="m">Medium</label>
-          </li>
-          <li>
-            <input type="radio" id="l"
-            name="size" value="l" checked>
-            <label for="l">Large</label>
-          </li>
-          <li>
-            <input type="radio" id="xl"
-            name="size" value="xl">
-            <label for="xl">X-Large</label>
-          </li>
-        </ul>
-      </div>
+      <form class="name">
+        <h1>Get My Pizza</h1>
+
+        <h2>Name and Address</h2>
+          <label class="control-label">Name</label>
+            <input id="name" name="name" type="text"
+            >
+            <br>
+          <label class="control-label">Address Line 1</label>
+            <input id="address-1" name="address-1" type="text"
+            >
+            <br>
+          <label class="control-label">Address Line 2</label>
+            <input id="address-2" name="address-2" type="text">
+            <p>Delivery only available within the Springfield Area</p>
+
+      </form>
     </div>
-    <button type="submit" class="btn btn-outline-danger" name="button">Place Order</button>
-  </form>
+    <form class="order" action="index.html" method="post">
+      <div class="row">
+        <div class="col-sm">
+          <h3>Select your toppings:</h3>
+          <ul class="bulletless">
+            <li>
+              <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+              <label for="pepperoni">Pepperoni</label>
+            </li>
+            <li>
+              <input type="checkbox" id="sausage" name="toppings" value="sausage">
+              <label for="sausage">Sausage</label>
+            </li>
+            <li>
+              <input type="checkbox" id="basil" name="toppings" value="basil">
+              <label for="basil">Basil</label>
+            </li>
+            <li>
+              <input type="checkbox" id="bell" name="toppings" value="bell pepper">
+              <label for="bell">Bell Pepper</label>
+            </li>
+            <li>
+              <input type="checkbox" id="onion" name="toppings" value="onion">
+              <label for="onion">Onion</label>
+            </li>
+            <li>
+              <input type="checkbox" id="olive" name="toppings" value="olive">
+              <label for="olive">Olive</label>
+            </li>
+            <li>
+              <input type="checkbox" id="tomato" name="toppings" value="tomato">
+              <label for="tomato">Tomato</label>
+            </li>
+            <li>
+              <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
+              <label for="pineapple">Pineapple</label>
+            </li>
+            <li>
+              <input type="checkbox" id="jalapeno" name="toppings" value="jalapeno">
+              <label for="jalapeno">Jalapeño</label>
+            </li>
+            <li>
+              <input type="checkbox" id="mushroom" name="toppings" value="mushroom">
+              <label for="mushroom">Mushroom</label>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm">
+          <h3>Select your size</h3>
+          <ul class="bulletless">
+            <li>
+              <input type="radio" id="xs"
+              name="size" value="xs">
+              <label for="xs">X-Small</label>
+            </li>
+            <li>
+              <input type="radio" id="s"
+              name="size" value="s">
+              <label for="s">Small</label>
+            </li>
+            <li>
+              <input type="radio" id="m"
+              name="size" value="m">
+              <label for="m">Medium</label>
+            </li>
+            <li>
+              <input type="radio" id="l"
+              name="size" value="l" checked>
+              <label for="l">Large</label>
+            </li>
+            <li>
+              <input type="radio" id="xl"
+              name="size" value="xl">
+              <label for="xl">X-Large</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-danger" name="button">Place Order</button>
+    </form>
     <h2>My Order:</h2>
     <ul>
       <div id="output"></div>
     </ul>
+    <div id="delivery"></div>
     <div id="total"></div>
   </div>
-  </body>
+</body>
 </html>

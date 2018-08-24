@@ -79,6 +79,9 @@ $(function() {
 
   var totalCost = 0
   $("form.order").submit(function(event){
+    if ($("#name").val() == false || $("#address-1").val() == false){
+      alert("Please enter a valid name and address.")
+    } else {
     var orders = []
     event.preventDefault();
     var toppings = []
@@ -92,7 +95,9 @@ $(function() {
       $("#output").append("<li>" + order.orderString() + "</li>")
       totalCost += order.cost();
     })
+    $("#delivery").html("Deliver to: " + $("#name").val() + " at " + $("#address-1").val() + " " + $("#address-2").val())
     $("#total").html("  Total Price: $" + totalCost + ".00")
+  }
   })
 
 

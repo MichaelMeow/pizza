@@ -1,12 +1,12 @@
-# _{Application Name}_
+# [Zip Zap Za](https://michaelmeow.github.io/pizza)
 
-#### _{Brief description of application}, {Date of current version}_
+#### Online pizza order form, 8/24/18
 
-#### By _**{List of contributors}**_
+#### By Michael Meow
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+This online order form for a fictional pizza restaurant will take orders, allow your to cancel specific pies from your order, update the total cost in real time, and confirm your order before finalizing.
 
 ## Specs
 
@@ -20,17 +20,17 @@ Program will add a topping if checkbox clicked.
 Input: pepperoni clicked
 Output: Large Pepperoni
 
-Program will change size from radio buttons
+Program will change size from radio buttons.
 
 Input: radio button size medium selected
 Output: Medium Cheese
 
-Program will add multiple toppings based on checkboxes
+Program will add multiple toppings based on checkboxes.
 
 Input: pepperoni and jalapeños checked
 Output: Large Pepperoni and Jalapeño
 
-Program will add a cost to the pizza
+Program will add a cost to the pizza.
 
 Input: none
 Output: Large Cheese 16.00
@@ -45,26 +45,24 @@ Program will add 1.00 per topping.
 Input: pepperoni and jalapeños checked
 Output: Large Pepperoni and Jalapeño 18.00
 
+Extra Exploration:
 
-Extra Exploration
-
-
-Program will add ordered pizza to a list
+Program will add ordered pizza to a list.
 
 Input: none
 Output: Orders: Large Cheese 16.00
 
-Program will allow user to input another pizza and add total order cost
+Program will allow user to input another pizza and add total order cost.
 
 Input: none, none again
 Output: Orders: Large Cheese, Large Cheese 32.00
 
-Program will allow user to enter Name and Address for pizza order
+Program will allow user to enter Name and Address for pizza order.
 
 Input: none, none again, Lisa Simpson 743 Evergreen Terrace, Springfield
 Output: Orders: Large Cheese, Large Cheese 32.00, Lisa Simpson 743 Evergreen Terrace, Springfield
 
-Program will allow user to create multiple orders
+Program will allow user to create multiple orders.
 
 Input: none, none again, Lisa Simpson 743 Evergreen Terrace, Springfield, XL pepperoni and Pineapple, Bart Simpson, 666 Eatmyshorts Drive
 Output: Orders: Large Cheese, Large Cheese 32.00, Lisa Simpson 743 Evergreen Terrace, Springfield, XL pepperoni and Pineapple, Bart Simpson, 666 Eatmyshorts Drive
@@ -78,28 +76,30 @@ Program will add to order one pizza at a time, allow user to remove, and then as
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* On GitHub, navigate to the main page of the repository.
+* Under the repository name, click Clone or download.
+* In the Clone with HTTPs section, click  to copy the clone URL for the repository.
+* Open Terminal.
+* Change the current working directory to the location where you want the cloned directory to be made.
+* Type git clone, and then paste the URL you copied in Step 2.
+* Press Enter. Your local clone will be created.
+* Use a browser to open index.html.
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
-
+Or, simply click the link at the top of the README to be redirected to the site on gh-pages.
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+There are no known bugs.
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+Please contact dearmichaelmeow@gmail.com with questions or comments.
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+This page uses Bootstrap CSS along with HTML and CSS.  It uses JS and JQuery.
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+This site is licensed as CDL.
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2018 Michael Meow

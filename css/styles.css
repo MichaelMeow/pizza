@@ -1,3 +1,7 @@
+body{
+  color: grey;
+}
+
 .bulletless{
   list-style-type: none;
 }
@@ -11,10 +15,26 @@
   color: red;
   padding-left: 1em;
 }
+
 .cancel:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #order{
   display: none;
+}
+
+.center {
+  text-align: center;
+  margin: 60px;
+}
+
+#note{
+  margin-bottom: 35px;
+  font-size: .7em;
+}
+
+button{
+  text-align: center;
+  margin: 25px;
 }

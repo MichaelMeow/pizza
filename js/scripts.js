@@ -10,22 +10,21 @@ Pizza.prototype.orderString = function() {
 var orderString = ""
 var toppings = this.toppings
 var size = this.size
-if (size = "xs"){
+if (size == "xs"){
   orderString = "Extra Small Cheese Pizza"
 }
-if (size = "s"){
+if (size == "s"){
   orderString = "Small Cheese Pizza"
 }
-if (size = "m"){
+if (size == "m"){
   orderString = "Medium Cheese Pizza"
 }
-if (size = "l"){
+if (size == "l"){
   orderString = "Large Cheese Pizza"
 }
-if (size = "xl"){
+if (size == "xl"){
   orderString = "Extra Large Cheese Pizza"
 }
-
 if (toppings.length !== 0 && toppings.length !== undefined){
   orderString += " with"
   for (i=0;i<toppings.length;i++){
@@ -48,6 +47,33 @@ return orderString
 
 };
 
+Pizza.prototype.cost = function() {
+  var size = this.size
+  var toppings = this.toppings
+  var price = 0;
+  if (size == "xs"){
+    price = 10
+  }
+  if (size == "s"){
+    price = 12
+  }
+  if (size == "m"){
+    price = 14
+  }
+  if (size == "l"){
+    price = 16
+  }
+  if (size == "xl"){
+    price = 20
+  }
+  toppings.forEach(function(topping){
+    price ++
+  })
+  price = price.toString() + ".00"
+  return price
+
+
+}
 // User Interface
 
 $(function() {
@@ -58,9 +84,8 @@ $(function() {
     $("input:checkbox[name=toppings]:checked").each(function(){
       toppings.push($(this).val());
     });
-
     var pizza = new Pizza(size, toppings)
-    $("#output").append("<li>" + pizza.orderString() + "</li>")
+    $("#output").append("<li>" + pizza.orderString() + "  Total Price: " + pizza.cost() + "</li>")
   })
 
 

@@ -8,6 +8,72 @@
 
 _{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
 
+## Specs
+
+Program will default to a large cheese pizza if no input is given.
+
+Input: none
+Output: Large Cheese
+
+Program will add a topping if checkbox clicked.
+
+Input: pepperoni clicked
+Output: Large Pepperoni
+
+Program will change size from radio buttons
+
+Input: radio button size medium selected
+Output: Medium Cheese
+
+Program will add multiple toppings based on checkboxes
+
+Input: pepperoni and jalapeños checked
+Output: Large Pepperoni and Jalapeño
+
+Program will add a cost to the pizza
+
+Input: none
+Output: Large Cheese 16.00
+
+Program will have a different cost based on size.
+
+Input: Medium
+Output: Medium Cheese 14.00
+
+Program will add 1.00 per topping.
+
+Input: pepperoni and jalapeños checked
+Output: Large Pepperoni and Jalapeño 18.00
+
+
+Extra Exploration
+
+
+Program will add ordered pizza to a list
+
+Input: none
+Output: Orders: Large Cheese 16.00
+
+Program will allow user to input another pizza and add total order cost
+
+Input: none, none again
+Output: Orders: Large Cheese, Large Cheese 32.00
+
+Program will allow user to enter Name and Address for pizza order
+
+Input: none, none again, Lisa Simpson 743 Evergreen Terrace, Springfield
+Output: Orders: Large Cheese, Large Cheese 32.00, Lisa Simpson 743 Evergreen Terrace, Springfield
+
+Program will allow user to create multiple orders
+
+Input: none, none again, Lisa Simpson 743 Evergreen Terrace, Springfield, XL pepperoni and Pineapple, Bart Simpson, 666 Eatmyshorts Drive
+Output: Orders: Large Cheese, Large Cheese 32.00, Lisa Simpson 743 Evergreen Terrace, Springfield, XL pepperoni and Pineapple, Bart Simpson, 666 Eatmyshorts Drive
+
+Program will create an expected Delivery time 30 minutes after order is placed.
+
+Input: none
+Output: Large Cheese 16.00, 9:14 AM
+
 ## Setup/Installation Requirements
 
 * _This is a great place_

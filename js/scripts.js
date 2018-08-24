@@ -136,6 +136,7 @@ $(function() {
     $("input:checkbox").attr('disabled',true);
     $(':input[type="submit"]').prop('disabled', true);
     $(':input[type="text"]').prop('disabled', true);
+    $(':input[type="number"]').prop('disabled', true);
     $("#finalize").hide();
     $("#thanks").html("Thank you for your order!");
     $("#time").html("Your estimated delivery time is " + deliveryEstimate());

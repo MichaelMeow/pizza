@@ -11,19 +11,19 @@ var orderString = ""
 var toppings = this.toppings
 var size = this.size
 if (size == "xs"){
-  orderString = "Extra Small Cheese Pizza"
+  orderString = "Extra small cheese pizza"
 }
 if (size == "s"){
-  orderString = "Small Cheese Pizza"
+  orderString = "Small cheese pizza"
 }
 if (size == "m"){
-  orderString = "Medium Cheese Pizza"
+  orderString = "Medium cheese pizza"
 }
 if (size == "l"){
-  orderString = "Large Cheese Pizza"
+  orderString = "Large cheese pizza"
 }
 if (size == "xl"){
-  orderString = "Extra Large Cheese Pizza"
+  orderString = "Extra large cheese pizza"
 }
 if (toppings.length !== 0 && toppings.length !== undefined){
   orderString += " with"
@@ -70,7 +70,22 @@ Pizza.prototype.cost = function() {
     price ++
   })
   return price
+}
 
+function delivery(){
+  var time = new Date();
+  var min = parseInt(time.getMinutes())+30
+  var hr = parseInt(time.getHours())
+  if (min > 59){
+    min = min - 60
+    hr = hr + 1
+    if (hr > 12){
+      hr = hr - 12
+    }
+  }
+  min = ("0" + min.toString()).slice(-2)
+  hr = hr.toString()
+  return hr + ":" + min
 
 }
 // User Interface
@@ -97,14 +112,22 @@ $(function() {
     })
     $("#delivery").html("Deliver to: " + $("#name").val() + " at " + $("#address-1").val() + " " + $("#address-2").val())
     $("#total").html("  Total Price: $" + totalCost + ".00")
-    var time = new Date();
-    $("#time").html("Estimated delivery time: " + ("0" + time.getHours()).slice(-2)   + ":" +
-    (parseInt(("0" + time.getMinutes()).slice(-2))+30).toString())
-
-
-
+    $('input:checkbox').prop('checked',false)
+    $("#finalize").show();
   }
   })
+  $("#finalize").click(function(){
+    $("input:radio").attr('disabled',true);
+    $("input:checkbox").attr('disabled',true);
+    $(':input[type="submit"]').prop('disabled', true);
+    $(':input[type="text"]').prop('disabled', true);
+    $("#finalize").hide();
+    $("#thanks").html("Thank you for your order!")
+    $("#time").html("Your estimated delivery time is " + delivery())
+
+  })
+
+
 
 
 });

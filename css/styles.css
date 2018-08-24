@@ -1,3 +1,7 @@
 .bulletless{
   list-style-type: none;
 }
+
+#finalize {
+  display: none;
+}

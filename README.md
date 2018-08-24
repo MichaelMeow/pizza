@@ -74,6 +74,8 @@ Program will create an expected Delivery time 30 minutes after order is placed.
 Input: none
 Output: Large Cheese 16.00, 9:14 AM
 
+Program will add to order one pizza at a time, allow user to remove, and then ask to finalize order.
+
 ## Setup/Installation Requirements
 
 * _This is a great place_

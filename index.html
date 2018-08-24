@@ -16,18 +16,15 @@
         <h1>Get My Pizza</h1>
 
         <h2>Name and Address</h2>
-          <label class="control-label">Name</label>
-            <input id="name" name="name" type="text"
-            >
+          <label>Name</label>
+            <input id="name" name="name" type="text">
             <br>
-          <label class="control-label">Address Line 1</label>
-            <input id="address-1" name="address-1" type="text"
-            >
+          <label>Address Line 1</label>
+            <input id="address-1" name="address-1" type="text">
             <br>
-          <label class="control-label">Address Line 2</label>
+          <label>Address Line 2</label>
             <input id="address-2" name="address-2" type="text">
             <p>Delivery only available within the Springfield area</p>
-
       </form>
     </div>
     <form class="order" action="index.html" method="post">
@@ -108,9 +105,12 @@
           </ul>
         </div>
       </div>
+      <label>Quantity</label>
+        <input id="quantity" name="name" type="number">
+        <br>
       <button type="submit" class="btn btn-outline-success" name="button">Add to Order</button>
     </form>
-    <h2>My Order:</h2>
+    <h2 id="order">My Order:</h2>
     <ul>
       <div id="output"></div>
     </ul>

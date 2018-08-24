@@ -1,55 +1,54 @@
 // Business Logic
 
-function Pizza(size, toppings){
+function Pizza(size, toppings, quantity){
   this.toppings = toppings
   this.size = size
+  this.quantity = quantity
 }
 
 
 Pizza.prototype.orderString = function() {
-var orderString = ""
-var toppings = this.toppings
-var size = this.size
-if (size == "xs"){
-  orderString = "Extra small cheese pizza"
-}
-if (size == "s"){
-  orderString = "Small cheese pizza"
-}
-if (size == "m"){
-  orderString = "Medium cheese pizza"
-}
-if (size == "l"){
-  orderString = "Large cheese pizza"
-}
-if (size == "xl"){
-  orderString = "Extra large cheese pizza"
-}
-if (toppings.length !== 0 && toppings.length !== undefined){
-  orderString += " with"
-  for (i=0;i<toppings.length;i++){
-  if (toppings.length > 1 && i == (toppings.length - 1)){
-    orderString += " and"
+  var orderString = ""
+  var toppings = this.toppings
+  var size = this.size
+  if (size == "xs"){
+    orderString = "Extra small cheese pizza"
   }
-  console.log(toppings);
-    orderString += " " + toppings[i]
-    if (toppings.length > 2){
-      orderString += ","
+  if (size == "s"){
+    orderString = "Small cheese pizza"
+  }
+  if (size == "m"){
+    orderString = "Medium cheese pizza"
+  }
+  if (size == "l"){
+    orderString = "Large cheese pizza"
+  }
+  if (size == "xl"){
+    orderString = "Extra large cheese pizza"
+  }
+  if (toppings.length !== 0 && toppings.length !== undefined){
+    orderString += " with"
+    for (i=0;i<toppings.length;i++){
+      if (toppings.length > 1 && i == (toppings.length - 1)){
+        orderString += " and"
+      }
+      orderString += " " + toppings[i]
+      if (toppings.length > 2){
+        orderString += ","
+      }
     }
-
-}
     if (toppings.length > 2){
-orderString = orderString.slice(0, - 1);
-}
-}
-orderString += "."
-return orderString
-
+      orderString = orderString.slice(0, - 1);
+    }
+  }
+  orderString += "."
+  return orderString
 };
 
 Pizza.prototype.cost = function() {
   var size = this.size
   var toppings = this.toppings
+  var quantity = this.quantity
   var price = 0;
   if (size == "xs"){
     price = 10
@@ -69,6 +68,9 @@ Pizza.prototype.cost = function() {
   toppings.forEach(function(topping){
     price ++
   })
+  if (quantity){
+    price = price * quantity
+  }
   return price
 }
 
@@ -97,32 +99,40 @@ $(function() {
     if ($("#name").val() == false || $("#address-1").val() == false){
       alert("Please enter a valid name and address.")
     } else {
-    var orders = []
-    event.preventDefault();
-    var toppings = []
-    var size = $("input:radio[name=size]:checked").val();
-    $("input:checkbox[name=toppings]:checked").each(function(){
-      toppings.push($(this).val());
-    });
-    var pizza = new Pizza(size, toppings)
-    orders.push(pizza);
-    orders.forEach(function(order){
-      $("#output").append("<li>" + order.orderString() + ' <span class="cancel"> cancel<span></li>')
-      $(".cancel").last().click(function(){
-        $((this.parentElement)).remove()
+      var orders = []
+      event.preventDefault();
+      var toppings = []
+      var size = $("input:radio[name=size]:checked").val();
+      var quantity = $("#quantity").val()
+      $("input:checkbox[name=toppings]:checked").each(function(){
+        toppings.push($(this).val());
+      });
+      var pizza = new Pizza(size, toppings, quantity)
+      orders.push(pizza);
+      orders.forEach(function(order){
+        $("#output").append("<li>" + quantity + " " + order.orderString() + ' <span class="cancel"> cancel<span></li>')
+        $(".cancel").last().click(function(){
+          $(this.parentElement).remove()
+          totalCost -= order.cost();
+          $("#total").html("  Total Price: $" + totalCost + ".00")
+        })
 
-        totalCost -= order.cost();
-        $("#total").html("  Total Price: $" + totalCost + ".00")
+        totalCost += order.cost();
+
       })
-      totalCost += order.cost();
-    })
-    $("#delivery").html("Deliver to: " + $("#name").val() + " at " + $("#address-1").val() + " " + $("#address-2").val())
-    $("#total").html("  Total Price: $" + totalCost + ".00")
-    $('input:checkbox').prop('checked',false)
-    $("#finalize").show();
-  }
+      $("#delivery").html("Deliver to: " + $("#name").val() + " at " + $("#address-1").val() + " " + $("#address-2").val())
+      $("#total").html("  Total Price: $" + totalCost + ".00")
+      $('input:checkbox').prop('checked',false)
+      $("#quantity").val("")
+      $("#finalize").show();
+      $("#order").show();
+
+    }
   })
   $("#finalize").click(function(){
+    if (totalCost == 0){
+      alert("Please enter a valid order")
+    } else if (confirm("Your total is: $" + totalCost + ". Are you sure you want to finalize your order?")){
     $("input:radio").attr('disabled',true);
     $("input:checkbox").attr('disabled',true);
     $(':input[type="submit"]').prop('disabled', true);
@@ -130,7 +140,7 @@ $(function() {
     $("#finalize").hide();
     $("#thanks").html("Thank you for your order!")
     $("#time").html("Your estimated delivery time is " + delivery())
-
+  }
   })
 
 

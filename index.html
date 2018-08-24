@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-sm">
         <h3>Select your toppings:</h3>
-        <ul>
+        <ul class="bulletless">
         <li>
           <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
           <label for="pepperoni">Pepperoni</label>
@@ -60,7 +60,7 @@
       </div>
       <div class="col-sm">
         <h3>Select your size</h3>
-        <ul>
+        <ul class="bulletless">
           <li>
             <input type="radio" id="xs"
             name="size" value="xs">
@@ -78,7 +78,7 @@
           </li>
           <li>
             <input type="radio" id="l"
-            name="size" value="l">
+            name="size" value="l" checked>
             <label for="l">Large</label>
           </li>
           <li>
@@ -91,7 +91,10 @@
     </div>
     <button type="submit" class="btn btn-outline-danger" name="button">Place Order</button>
   </form>
-    <h2 id="output">My Order:</h2>
+    <h2>My Order:</h2>
+    <ul>
+      <div id="output"></div>
+    </ul>
   </div>
   </body>
 </html>

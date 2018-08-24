@@ -5,3 +5,12 @@
 #finalize {
   display: none;
 }
+
+.cancel {
+  font-size: .6em;
+  color: red;
+  padding-left: 1em;
+}
+.cancel:hover {
+    text-decoration: underline;
+}

@@ -107,7 +107,13 @@ $(function() {
     var pizza = new Pizza(size, toppings)
     orders.push(pizza);
     orders.forEach(function(order){
-      $("#output").append("<li>" + order.orderString() + "</li>")
+      $("#output").append("<li>" + order.orderString() + ' <span class="cancel"> cancel<span></li>')
+      $(".cancel").last().click(function(){
+        $((this.parentElement)).remove()
+
+        totalCost -= order.cost();
+        $("#total").html("  Total Price: $" + totalCost + ".00")
+      })
       totalCost += order.cost();
     })
     $("#delivery").html("Deliver to: " + $("#name").val() + " at " + $("#address-1").val() + " " + $("#address-2").val())

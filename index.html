@@ -13,51 +13,80 @@
     <h1>Get My Pizza</h1>
     <form class="order" action="index.html" method="post">
     <div class="row">
-      <div class="col-xl-6">
+      <div class="col-sm">
         <h3>Select your toppings:</h3>
-        <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
-        <label for="pepperoni">Pepperoni</label>
-        <input type="checkbox" id="sausage" name="toppings" value="sausage">
-        <label for="sausage">Sausage</label>
-        <input type="checkbox" id="basil" name="toppings" value="basil">
-        <label for="basil">Basil</label>
-        <input type="checkbox" id="bell" name="toppings" value="bell">
-        <label for="bell">Bell Pepper</label>
-        <input type="checkbox" id="onion" name="toppings" value="onion">
-        <label for="onion">Onion</label>
-        <input type="checkbox" id="olive" name="toppings" value="olive">
-        <label for="olive">Olive</label>
-        <input type="checkbox" id="tomato" name="toppings" value="tomato">
-        <label for="tomato">Tomato</label>
-        <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
-        <label for="pineapple">Pineapple</label>
-        <input type="checkbox" id="jalapeno" name="toppings" value="jalapeno">
-        <label for="jalapeno">Jalapeño</label>
-        <input type="checkbox" id="mushroom" name="toppings" value="mushroom">
-        <label for="mushroom">Mushroom</label>
+        <ul>
+        <li>
+          <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+          <label for="pepperoni">Pepperoni</label>
+        </li>
+        <li>
+          <input type="checkbox" id="sausage" name="toppings" value="sausage">
+          <label for="sausage">Sausage</label>
+        </li>
+        <li>
+          <input type="checkbox" id="basil" name="toppings" value="basil">
+          <label for="basil">Basil</label>
+        </li>
+        <li>
+          <input type="checkbox" id="bell" name="toppings" value="bell">
+          <label for="bell">Bell Pepper</label>
+        </li>
+        <li>
+          <input type="checkbox" id="onion" name="toppings" value="onion">
+          <label for="onion">Onion</label>
+        </li>
+        <li>
+          <input type="checkbox" id="olive" name="toppings" value="olive">
+          <label for="olive">Olive</label>
+        </li>
+        <li>
+          <input type="checkbox" id="tomato" name="toppings" value="tomato">
+          <label for="tomato">Tomato</label>
+        </li>
+        <li>
+          <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
+          <label for="pineapple">Pineapple</label>
+        </li>
+        <li>
+          <input type="checkbox" id="jalapeno" name="toppings" value="jalapeno">
+          <label for="jalapeno">Jalapeño</label>
+        </li>
+        <li>
+          <input type="checkbox" id="mushroom" name="toppings" value="mushroom">
+          <label for="mushroom">Mushroom</label>
+        </li>
+      </ul>
       </div>
-      <div class="col-xl-6">
+      <div class="col-sm">
         <h3>Select your size</h3>
-        <input type="radio" id="xs"
-     name="size" value="xs">
-    <label for="xs">X-Small</label>
-
-    <input type="radio" id="s"
-     name="size" value="s">
-    <label for="s">Small</label>
-
-    <input type="radio" id="m"
-     name="size" value="m">
-    <label for="m">Medium</label>
-
-    <input type="radio" id="l"
-     name="size" value="l">
-    <label for="l">Large</label>
-
-    <input type="radio" id="xl"
-     name="size" value="xl">
-    <label for="xl">X-Large</label>
-
+        <ul>
+          <li>
+            <input type="radio" id="xs"
+            name="size" value="xs">
+            <label for="xs">X-Small</label>
+          </li>
+          <li>
+            <input type="radio" id="s"
+            name="size" value="s">
+            <label for="s">Small</label>
+          </li>
+          <li>
+            <input type="radio" id="m"
+            name="size" value="m">
+            <label for="m">Medium</label>
+          </li>
+          <li>
+            <input type="radio" id="l"
+            name="size" value="l">
+            <label for="l">Large</label>
+          </li>
+          <li>
+            <input type="radio" id="xl"
+            name="size" value="xl">
+            <label for="xl">X-Large</label>
+          </li>
+        </ul>
       </div>
     </div>
     <button type="submit" class="btn btn-outline-danger" name="button">Place Order</button>

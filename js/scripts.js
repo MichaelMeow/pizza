@@ -97,6 +97,12 @@ $(function() {
     })
     $("#delivery").html("Deliver to: " + $("#name").val() + " at " + $("#address-1").val() + " " + $("#address-2").val())
     $("#total").html("  Total Price: $" + totalCost + ".00")
+    var time = new Date();
+    $("#time").html("Estimated delivery time: " + ("0" + time.getHours()).slice(-2)   + ":" +
+    (parseInt(("0" + time.getMinutes()).slice(-2))+30).toString())
+
+
+
   }
   })
 
